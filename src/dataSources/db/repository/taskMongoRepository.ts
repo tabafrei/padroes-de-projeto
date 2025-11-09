@@ -1,12 +1,16 @@
 import { Task } from "../../../entities/task";
-import { AddATaskModel } from "../../../usecases/addTask";
-import { AddTaskRepository } from "../../../usecases/repository/addTaskRepository";
+import {
+  AddATaskModel,
+  AddTaskRepository,
+  DeleteTaskModel,
+  DeleteTaskRepository
+} from "../../../usecases";
 import { MongoManager } from "../../config/mongoManager";
-import { DeleteTaskRepository } from "../../../usecases/repository/deleteTaskRepository";
-import { DeleteTaskModel } from "../../../usecases/deleteTask";
 import { ObjectId } from "mongodb";
-import { InvalidParamError } from "../../../adapters/presentations/api/errors/invalid-param-error";
-import { NotFoundError } from "../../../adapters/presentations/api/errors/not-found-error";
+import {
+  InvalidParamError,
+  NotFoundError
+} from "../../../adapters/presentations/api/errors";
 
 export class TaskMongoRepository implements AddTaskRepository, DeleteTaskRepository {
 
